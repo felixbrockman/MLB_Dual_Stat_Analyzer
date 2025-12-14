@@ -1,0 +1,521 @@
+/* Main background color */
+body {
+  background-color: #130347 !important;
+  color: #ffffff !important;
+}
+.bootstrap-select > .dropdown-toggle {
+  background-color: #451c9b !important;
+  border: 1px solid #07bcff !important;
+  border-radius: 4px !important;
+  height: 38px !important;
+  line-height: 26px !important;
+}
+.bootstrap-select .dropdown-toggle:focus {
+  outline: none !important;
+  border-color: #ffffff !important;
+  background-color: #451c9b !important;
+}
+.btn-group-justified > .btn-group > .btn,
+.btn-group-justified > .btn {
+  height: 38px !important;
+  line-height: 26px !important;
+}
+select.form-control {
+  height: 38px !important;
+}
+.shiny-notification {
+  position: fixed !important;
+  top: 50% !important;
+  left: 50% !important;
+  transform: translate(-50%, -50%) !important;
+  width: 450px !important;
+  font-size: 20px !important;
+  padding: 25px !important;
+  z-index: 9999 !important;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.3) !important;
+}
+.shiny-notification-error {
+  background-color: #dc01ff !important;
+  color: #ffffff !important;
+  border: 2px solid #07bcff !important;
+}
+/* --- Stat selection bar: force true horizontal alignment --- */
+.stat-bar{
+  display: flex !important;
+  align-items: center !important;
+  gap: 20px;
+}
+.stat-bar .stat-item{
+  display: flex !important;
+  align-items: center !important;
+  height: 38px !important;
+}
+.stat-bar .stat-item .stat-label{
+  margin: 0 10px 0 0 !important;
+  line-height: 38px !important;
+  white-space: nowrap;
+  font-weight: bold !important;
+}
+/* Kill Shiny's default spacing that causes the floating up effect */
+.stat-bar .shiny-input-container,
+.stat-bar .form-group{
+  margin: 0 !important;
+  padding: 0 !important;
+}
+/* Style Selectize UI to match Bootstrap button height exactly */
+/* Stat 1 / Stat 2 (selectize) — FINAL OVERRIDE */
+.stat-bar .selectize-control.single .selectize-input {
+  height: 38px !important;
+  min-height: 38px !important;
+  padding: 6px 12px !important;
+  line-height: 20px !important;
+  box-sizing: border-box !important;
+  border: 1px solid #ffffff !important;
+  border-radius: 4px !important;
+  display: flex !important;
+  align-items: center !important;
+  background-color: #451c9b !important;
+  color: #ffffff !important;
+  box-shadow: none !important;
+}
+/* Make the typed text + placeholder visible */
+.stat-bar .selectize-control.single .selectize-input input {
+  line-height: 20px !important;
+  color: #ffffff !important;
+  background: transparent !important;
+}
+.stat-bar .selectize-control.single .selectize-input input::placeholder {
+  color: #ffffff !important;
+}
+/* Keep the dropdown menu normal (white) */
+.stat-bar .selectize-dropdown {
+  background: #ffffff !important;
+  border: 1px solid #dddddd !important;
+}
+.stat-bar .selectize-dropdown .option { 
+  color: #222 !important; 
+}
+.stat-bar .selectize-dropdown .active { 
+  background: #f2f2f2 !important; 
+}
+/* Focus/hover state shouldn't change color */
+.stat-bar .selectize-control.single .selectize-input.focus,
+.stat-bar .selectize-control.single .selectize-input:hover {
+  background-color: #451c9b !important;
+  border-color: #ffffff !important;
+  box-shadow: none !important;
+}
+/* Make actionButtons match the same height */
+.stat-bar .btn{
+  height: 38px !important;
+  box-sizing: border-box !important;
+}
+/* Layout sizing (horizontal only) */
+.stat-bar { gap: 20px; } /* keep your existing gap if already set */
+
+/* Make the two stat selectors together ~50% of the row */
+.stat-bar .stat-stat{
+  flex: 0 0 25%;
+  min-width: 220px; /* prevents ugly collapse on smaller screens */
+}
+
+/* Slightly shrink Reset, slightly grow Generate */
+.stat-bar .stat-reset{
+  flex: 0 0 230px;   /* smaller reset button */
+}
+
+.stat-bar .stat-generate{
+  flex: 1 1 auto;    /* fills reclaimed space */
+  min-width: 300px; /* ensures visible growth */
+}
+
+/* Ensure the button fills its container and stays centered */
+.stat-bar .stat-generate > .btn,
+.stat-bar .stat-reset > .btn{
+  width: 100% !important;
+  height: 38px !important;  /* keep height locked */
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+}
+/* Make Generate button text bold */
+.stat-bar .stat-generate > .btn{
+  font-weight: bold !important;
+}
+/* Graph search wrapper */
+#graph_search_wrap {
+  width: 85%;
+  margin: 0 auto;
+}
+/* Percentile graph sizing — horizontal rectangle */
+#percentile_plot_wrap {
+  width: 85%;
+  margin: 0 auto;
+}
+/* Ensure selectize selected-item X is visible/clickable */
+.selectize-control.multi .item .remove {
+  font-size: 16px;
+  line-height: 16px;
+  padding-left: 6px;
+  cursor: pointer;
+}
+/* ---- Graph search bar alignment (Selectize + button) ---- */
+#graph_search_wrap .shiny-input-container,
+#graph_search_wrap .form-group{
+  margin: 0 !important;
+  padding: 0 !important;
+}
+#graph_search_wrap{
+  display: flex !important;
+  align-items: center !important;
+  gap: 10px !important;
+}
+/* Let search input fill remaining space */
+#graph_search_wrap > div:first-child{
+  flex: 1 1 auto !important;
+}
+/* Lock Selectize height to match buttons */
+#graph_search_wrap .selectize-control,
+#graph_search_wrap .selectize-control .selectize-input{
+  height: 38px !important;
+  min-height: 38px !important;
+  line-height: 26px !important;
+  box-sizing: border-box !important;
+  display: flex !important;
+  align-items: center !important;
+}
+/* Make the text cursor sit vertically centered */
+#graph_search_wrap .selectize-control .selectize-input input{
+  line-height: 20px !important;
+}
+/* Ensure button matches search bar style */
+#graph_search_wrap .btn{
+  height: 38px !important;
+  display: flex !important;
+  align-items: center !important;
+  background-color: #240368 !important;
+  color: #ffffff !important;
+  border-color: #07bcff !important;
+}
+/* Keep same appearance on hover (no color change) */
+#graph_search_wrap .btn:hover,
+#graph_search_wrap .btn:focus,
+#graph_search_wrap .btn:active {
+  background-color: #240368 !important;
+  color: #ffffff !important;
+  border-color: #07bcff !important;
+}
+/* Apply Lato font (900 weight) to titles and headers - keeping Passion One for comparison */
+h1, h3, h4 {
+  font-family: 'Lato', sans-serif !important;
+  font-weight: 900 !important;
+  text-transform: uppercase !important;
+}
+/* Move Plotly modebar to top left */
+.js-plotly-plot .modebar,
+.plotly .modebar,
+.modebar{
+  top: 10px !important;
+  left: 10px !important;
+  right: auto !important;
+  bottom: auto !important;
+}
+/* --- Plotly modebar spacing fix (safe) --- */
+.modebar {
+  display: block !important;   /* don't flex the whole bar */
+}
+.modebar-group {
+  display: inline-flex !important;
+  gap: 8px !important;         /* even spacing */
+  align-items: center !important;
+}
+.modebar-btn {
+  margin: 0 !important;        /* let gap handle spacing */
+}
+/* --- Plotly modebar icons: force white --- */
+.js-plotly-plot .modebar-btn svg,
+.js-plotly-plot .modebar-btn svg path,
+.js-plotly-plot .modebar-btn svg rect,
+.js-plotly-plot .modebar-btn svg polygon,
+.js-plotly-plot .modebar-btn svg circle,
+.js-plotly-plot .modebar-btn svg line {
+  fill: #ffffff !important;
+  stroke: #ffffff !important;
+}
+/* Optional: make the button backgrounds subtle on hover/active */
+.js-plotly-plot .modebar-btn:hover,
+.js-plotly-plot .modebar-btn.active {
+  background: rgba(255,255,255,0.15) !important;
+}
+/* Optional: if the icons look dim, Plotly sometimes uses opacity */
+.js-plotly-plot .modebar-btn {
+  opacity: 1 !important;
+}
+/* Make placeholder text white */
+::placeholder,
+.selectize-input::placeholder,
+input::placeholder,
+textarea::placeholder {
+  color: white !important;
+  opacity: 0.8 !important;
+}
+.selectize-input input::placeholder {
+  color: white !important;
+  opacity: 0.8 !important;
+}
+/* Toggle filter selected state color */
+.btn-group .btn.active,
+.btn-group .btn:active,
+.btn-group .btn.active:focus,
+.btn-group .btn.active:hover,
+.btn-group-toggle .btn.active,
+.btn-group-toggle .btn:active,
+.btn-group-toggle .btn.active:focus,
+.btn-group-toggle .btn.active:hover {
+  background-color: #451c9b !important;
+  border-color: white !important;
+  color: #ffffff !important;
+}
+/* Unselected toggle buttons should have no border or transparent border */
+.btn-group .btn:not(.active),
+.btn-group-toggle .btn:not(.active) {
+  border-color: transparent !important;
+}
+/* Style for graph quadrant explanation text */
+#graph_quadrant_help {
+  position: absolute;
+  top: 10px;
+  left: 725px;
+  font-family: 'Lato', sans-serif;
+  font-weight: 300;
+  font-size: 11px;
+  color: white;
+  z-index: 1000;
+  pointer-events: none;
+}
+/* Style for graph tools helper text */
+#graph_tools_help {
+  position: absolute;
+  top: 16px;
+  left: 185px;
+  font-family: 'Lato', sans-serif;
+  font-weight: 300;
+  font-size: 11px;
+  color: white;
+  z-index: 1000;
+  pointer-events: none;
+}
+/* Apply Lato font with different weights throughout the app */
+/* Light 300: standard text (buttons, filters, search bars, table data, error messages, blank messages, stats/percentiles in tooltips) */
+body, .form-control, input, select, textarea, 
+.bootstrap-select, .selectize-control, .shiny-input-container,
+table td, .shiny-notification,
+.selectize-dropdown, p, .btn {
+  font-family: 'Lato', sans-serif !important;
+  font-weight: 300 !important;
+  color: #ffffff !important;
+}
+/* Input and select backgrounds */
+.form-control, input, select, textarea,
+.selectize-control .selectize-input,
+.bootstrap-select .dropdown-toggle {
+  background-color: #240368 !important;
+  color: #ffffff !important;
+  border-color: #07bcff !important;
+}
+/* Button styles - default: purple with white border */
+.btn, .btn-default {
+  background-color: #451c9b !important;
+  color: #ffffff !important;
+  border-color: white !important;
+}
+/* Regular buttons hover: keep same appearance */
+.btn:hover, .btn:focus, .btn:active {
+  background-color: #451c9b !important;
+  color: #ffffff !important;
+  border-color: white !important;
+}
+/* Generate Player Rankings button: always blue, hover to magenta (higher specificity) */
+.stat-bar .stat-generate .btn,
+.stat-bar .stat-generate .btn:not(:hover):not(:focus):not(:active) {
+  background-color: #07bcff !important;
+  color: #130347 !important;
+  border-color: #07bcff !important;
+}
+.stat-bar .stat-generate .btn:hover,
+.stat-bar .stat-generate .btn:focus,
+.stat-bar .stat-generate .btn:active {
+  background-color: #07bcff !important;
+  color: #130347 !important;
+  border-color: #07bcff !important;
+}
+/* Table styles */
+table {
+  background-color: transparent !important;
+}
+table th {
+  background-color: #451c9b !important;
+  color: #ffffff !important;
+  border: 1px solid white !important;
+  border-top: 1px solid white !important;
+  border-bottom: 1px solid white !important;
+  position: sticky !important;
+  top: 0 !important;
+  z-index: 10 !important;
+  box-shadow: 0 1px 0 white, 0 -1px 0 white !important;
+}
+table td {
+  background-color: #240368 !important;
+  color: #ffffff !important;
+  border-color: white !important;
+}
+/* All rows use darker purple */
+table tbody tr {
+  background-color: #240368 !important;
+}
+/* Ranking title alignment - fixed height, text anchored to bottom */
+.ranking-title {
+  height: 72px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  text-align: center;
+  line-height: 1.15;
+  margin-bottom: 8px;
+}
+/* --- Sticky table header: keep white stroke/border --- */
+.table thead th,
+.table thead td {
+  border-color: #ffffff !important;
+}
+.table.table-bordered thead th,
+.table.table-bordered thead td {
+  border: 1px solid #ffffff !important;
+}
+/* If header is sticky, ensure it stays above body and still looks outlined */
+.table thead th {
+  position: sticky;
+  top: 0;
+  z-index: 5;
+  background: inherit;
+}
+/* Optional: extra crisp stroke look */
+.table thead th {
+  box-shadow: inset 0 0 0 1px #ffffff;
+}
+/* Regular 400: filter headers (player type, year range, primary position, stat 1:, stat 2:, etc.) and player name in graph tooltips */
+label, .control-label, .stat-label, h5, .stat-bar .stat-label {
+  font-family: 'Lato', sans-serif !important;
+  font-weight: 400 !important;
+}
+/* Bold 700: table headers in results lists and Generate Player Rankings button text */
+thead th, table th {
+  font-family: 'Lato', sans-serif !important;
+  font-weight: 700 !important;
+}
+/* Generate Player Rankings button text - Bold 700 */
+.stat-bar .stat-generate .btn {
+  font-family: 'Lato', sans-serif !important;
+  font-weight: 700 !important;
+}
+/* ===== Dropdown preview boxes (the closed state) ===== */
+/* pickerInput (shinyWidgets -> bootstrap-select) */
+.bootstrap-select > .dropdown-toggle,
+.bootstrap-select > .dropdown-toggle:hover,
+.bootstrap-select > .dropdown-toggle:focus,
+.bootstrap-select > .dropdown-toggle:active {
+  background-color: #451c9b !important;
+  background-image: none !important;  /* kill bootstrap gradient */
+  color: #ffffff !important;
+  border-color: #ffffff !important;   /* white border */
+}
+.bootstrap-select .filter-option-inner-inner {
+  color: #ffffff !important;
+}
+/* Stat 1 / Stat 2 (selectInput = selectize) */
+/* The visible preview box */
+.selectize-control.single .selectize-input {
+  background-color: #451c9b !important;
+  color: white !important;
+  border: 1px solid white !important;   /* outline */
+  border-radius: 4px !important;
+}
+/* Placeholder text (Choose Stat 1) */
+.selectize-control.single .selectize-input input::placeholder {
+  color: #ffffff !important;
+}
+/* The dropdown menu */
+.selectize-dropdown {
+  background: white !important;
+  border: 1px solid #ddd !important;
+}
+/* Option text */
+.selectize-dropdown .option {
+  color: #222 !important;
+}
+/* Hovered option */
+.selectize-dropdown .active {
+  background: #f2f2f2 !important;
+}
+/* Focus glow/outline (when clicked): keep same appearance */
+.selectize-control.single .selectize-input.focus,
+.selectize-control.single .selectize-input:hover {
+  background-color: #451c9b !important;
+  border-color: white !important;
+  box-shadow: none !important;
+}
+/* ===== PickerInput outline / border color -> WHITE ===== */
+/* Default, hover, focus, active */
+.bootstrap-select > .dropdown-toggle,
+.bootstrap-select > .dropdown-toggle:hover,
+.bootstrap-select > .dropdown-toggle:focus,
+.bootstrap-select > .dropdown-toggle:active,
+.bootstrap-select.open > .dropdown-toggle {
+  border-color: #ffffff !important;
+  box-shadow: none !important; /* remove blue glow */
+}
+/* When focused via keyboard or click: keep same appearance */
+.bootstrap-select .dropdown-toggle:focus {
+  outline: none !important;
+  box-shadow: none !important;
+  background-color: #451c9b !important;
+  border-color: #ffffff !important;
+}
+/* Arrow caret color (optional but recommended) */
+.bootstrap-select .caret,
+.bootstrap-select .dropdown-toggle::after {
+  border-top-color: #ffffff !important;
+}
+/* ===== Opened dropdown menu (search bar, Select All/Deselect All buttons) ===== */
+/* Dropdown menu container */
+.bootstrap-select .dropdown-menu {
+  background-color: white !important;
+  border-color: #ddd !important;
+}
+/* Search box inside dropdown */
+.bootstrap-select .bs-searchbox input,
+.bootstrap-select .bs-searchbox .form-control {
+  background-color: white !important;
+  color: #000000 !important;
+  border-color: #ddd !important;
+}
+/* Select All / Deselect All buttons */
+.bootstrap-select .bs-actionsbox .btn,
+.bootstrap-select .bs-actionsbox button {
+  background-color: white !important;
+  color: #000000 !important;
+  border-color: #ddd !important;
+}
+.bootstrap-select .bs-actionsbox .btn:hover,
+.bootstrap-select .bs-actionsbox button:hover {
+  background-color: #f5f5f5 !important;
+  color: #000000 !important;
+}
+/* Dropdown option text */
+.bootstrap-select .dropdown-menu .dropdown-item {
+  color: #000000 !important;
+}
+.bootstrap-select .dropdown-menu .dropdown-item:hover {
+  background-color: #f5f5f5 !important;
+  color: #000000 !important;
+}
